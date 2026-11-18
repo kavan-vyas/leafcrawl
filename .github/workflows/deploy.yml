@@ -11,6 +11,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: npm }
       - run: npm ci && npm run build
+        env: { VITE_RELAY: "https://leafcrawl-relay.leafcrawl.workers.dev" }
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
       - id: d
